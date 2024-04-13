@@ -1,4 +1,4 @@
-import CheckoutInformationInput from "./CheckoutInformationInput";
+import CheckoutInformationInput from "../CheckoutContainer/CheckoutInformationInput";
 import ShoppingCart from "../ShoppingCart";
 import { useCheckout } from "../../pages/Checkout";
 
@@ -9,9 +9,9 @@ const CheckoutInformationFormTabOne = () => {
   };
   console.log(checkoutData);
   return (
-    <div className="lg:w-[70%] mx-auto border-2 rounded-2xl border-primary p-20">
+    <div className="mx-auto border-2 rounded-2xl border-primary p-20">
       <ShoppingCart />
-
+      <p>*Fields are required</p>
       <div>
         <div className="flex">
           <CheckoutInformationInput

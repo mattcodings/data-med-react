@@ -8,7 +8,7 @@ const CheckoutInformationInput = ({
   return (
     <label className="form-control w-full max-w-xs">
       <div className="label">
-        <span className="label-text">{placeholder}</span>
+        <span className="label-text">*{placeholder}</span>
       </div>
       <input
         type={type}
@@ -17,6 +17,7 @@ const CheckoutInformationInput = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required
       />
     </label>
   );

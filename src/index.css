@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active {
+  background-color: #0a3684;
+  color: white;
+}
+.icon-checkmark {
+  color: #00ff00;
+}

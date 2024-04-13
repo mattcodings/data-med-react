@@ -12,6 +12,9 @@ import {
   Profile,
 } from "./pages";
 import Test from "./pages/Test";
+import Tab1 from "./components/CheckoutContainer/Tab1";
+import Tab2 from "./components/CheckoutContainer/Tab2";
+import Tab3 from "./components/CheckoutContainer/Tab3";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +41,14 @@ const router = createBrowserRouter([
             <Checkout />
           </PrivateRoute>
         ),
+        children: [
+          { index: true, element: <Tab1 /> },
+          { path: "tab1", element: <Tab1 /> },
+          { path: "tab2", element: <Tab2 /> },
+          { path: "tab3", element: <Tab3 /> },
+        ],
       },
+
       {
         path: "/profile",
         element: (

@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import CheckoutTabs from "../components/CheckoutTabs";
+import TabsComponent from "../components/CheckoutContainer/TabsComponent";
 const CheckoutContext = createContext();
 export const useCheckout = () => useContext(CheckoutContext);
 const Checkout = () => {
@@ -14,6 +15,9 @@ const Checkout = () => {
     zipCode: "",
     tax: 0,
     shipping: "1 business day",
+    nameOnCard: "",
+    ccNumber: "",
+    expDate: "",
     cvv: "",
   });
   const updateCheckoutData = (key, value) => {
@@ -21,7 +25,7 @@ const Checkout = () => {
   };
   return (
     <CheckoutContext.Provider value={{ checkoutData, updateCheckoutData }}>
-      <CheckoutTabs />
+      <TabsComponent />
     </CheckoutContext.Provider>
   );
 };
