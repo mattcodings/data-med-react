@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="navbar align-element">
         <div className="navbar-start">
           <Link to="/">
-            <img src="../assets/images/datamedlogo.jpg" />
+            <img src="./src/images/DataMed-logo.png" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <ul className="menu menu-horizontal">
-            {user ? <Link to="/profile">Profile</Link> : ""}
+            {/* {user ? <Link to="/profile">Profile</Link> : ""} */}
             <div className="dropdown">
               <FaShoppingCart
                 tabIndex={0}
@@ -40,7 +40,7 @@ const Navbar = () => {
               >
                 {shoppingCart.map((product) => {
                   return (
-                    <li key={product.name}>
+                    <li key={product.uid}>
                       <h3>{product.name}</h3>
                     </li>
                   );
@@ -51,7 +51,6 @@ const Navbar = () => {
                   "No Items Yet"
                 )}
               </ul>
-              {/* <div className={showCart ? "block" : "hidden"}>Cart Items</div> */}
             </div>
             {user ? (
               <button

@@ -32,7 +32,7 @@ function TabsComponent() {
               activeClassName="active"
               className="w-[100%] bg-accent text-black flex justify-center items-center"
             >
-              <span>Client Information</span>{" "}
+              <span className="2xl">Client Information</span>{" "}
               {clientInfoInputsTrue() ? (
                 <FaCheck className="icon-checkmark ml-8" />
               ) : (
@@ -46,7 +46,7 @@ function TabsComponent() {
               activeClassName="active"
               className="inline-block w-[100%] bg-accent text-black"
             >
-              <span>Payment Information</span>{" "}
+              <span className="2xl">Payment Information</span>{" "}
               {paymentInfoInputsTrue() ? (
                 <FaCheck className="icon-checkmark ml-8" />
               ) : (

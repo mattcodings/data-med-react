@@ -57,13 +57,13 @@ const ProductFilterSection = () => {
     filteredProducts();
   }, [filters.category, filters.company]);
   return (
-    <div className="border-4 border-primary p-8">
+    <div className="bg-[#ddd] p-8">
       <h3 className="text-3xl border-b-8 border-primary">Category</h3>
       <ul>
         {categoryArray.map((category) => {
           return (
             <li key={category}>
-              <label className="p-2 capitalize">
+              <label className="capitalize">
                 <input
                   className="m-2"
                   type="checkbox"
@@ -81,7 +81,7 @@ const ProductFilterSection = () => {
         {companyArray.map((company) => {
           return (
             <li key={company}>
-              <label className="p-2 capitalize">
+              <label className="capitalize">
                 <input
                   className="m-2"
                   type="checkbox"

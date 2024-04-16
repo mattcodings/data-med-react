@@ -6,11 +6,7 @@ const ShoppingCart = () => {
   return (
     <ul>
       {shoppingCart.map((item) => {
-        return (
-          <li key={item.name}>
-            <ShoppingCartItem item={item} />
-          </li>
-        );
+        return <ShoppingCartItem key={item.uid} item={item} />;
       })}
     </ul>
   );

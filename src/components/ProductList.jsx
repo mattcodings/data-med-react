@@ -13,13 +13,17 @@ const ProductList = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        value={searchInput}
-        onChange={handleSearchChange}
-        placeholder="search"
-        className="border-primary border-4 block mx-auto"
-      />
+      <div className="flex justify-center items-center gap-x-2 my-20">
+        <label htmlFor="search ">Search</label>
+        <input
+          type="text"
+          value={searchInput}
+          onChange={handleSearchChange}
+          placeholder="search"
+          id="search"
+          className="border-primary border-2 p-2"
+        />
+      </div>
       <div className="mx-20">
         {filterProductsObject?.length > 0
           ? filterProductsObject.map((product) => {

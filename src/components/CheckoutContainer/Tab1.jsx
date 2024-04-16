@@ -20,7 +20,7 @@ const Tab1 = () => {
       <ShoppingCart />
       <p>*Fields are required</p>
       <form onSubmit={handleForm}>
-        <div className="flex">
+        <div className="flex gap-x-10 flex-wrap">
           <CheckoutInformationInput
             name="firstName"
             value={checkoutData.firstName}
@@ -36,7 +36,7 @@ const Tab1 = () => {
             type="text"
           />
         </div>
-        <div className="flex">
+        <div className="">
           <CheckoutInformationInput
             name="email"
             value={checkoutData.email}
@@ -53,7 +53,7 @@ const Tab1 = () => {
           placeholder="Billing Address"
           type="text"
         />
-        <div className="flex">
+        <div className="flex gap-x-10 flex-wrap">
           <CheckoutInformationInput
             name="city"
             value={checkoutData.city}

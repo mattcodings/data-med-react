@@ -4,7 +4,6 @@ const HomeLayout = () => {
   return (
     <>
       <nav>
-        <span className="text-primary">DataMed</span>
         <Navbar />
       </nav>
       <Outlet />
