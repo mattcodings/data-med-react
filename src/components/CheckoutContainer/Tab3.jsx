@@ -1,9 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import ShoppingCart from "../ShoppingCart";
 import { useCheckout } from "../../pages/Checkout";
+import { useGlobalContext } from "../../context";
 
 const Tab3 = () => {
   const { checkoutData } = useCheckout();
+  const { shoppingCart } = useGlobalContext();
+  let total = 0;
+  shoppingCart.forEach((product) => {
+    total += product.price;
+  });
   const {
     firstName,
     lastName,
@@ -33,6 +39,15 @@ const Tab3 = () => {
         <span>{ccNumber} </span>
         <span>{expDate} </span>
         <span>{cvv}</span>
+        <span>{total.toFixed(2)}</span>
+      </div>
+      <div className="mt-8">
+        <button
+          onClick={() => navigate("/checkout/tab2")}
+          className="btn bg-primary text-accent"
+        >
+          Go Back
+        </button>
       </div>
     </div>
   );

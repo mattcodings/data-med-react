@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useProductContext } from "../pages/Products";
 import ProductSingleItem from "./ProductSingleItem";
 import FilterInput from "./FilterInput";
 
 const ProductList = () => {
-  const { productsArray, filterProductsObject } = useProductContext();
+  const { productsArray, setFilterProductsObject, filterProductsObject } =
+    useProductContext();
   const [searchInput, setSearchInput] = useState("");
+  useEffect(() => {
+    if (searchInput.trim() === "") {
+      setFilterProductsObject(productsArray);
+    } else {
+      const searchFilter = searchInput.toLowerCase();
+      const filteredProducts = productsArray.filter((item) => {
+        return (
+          item.name.toLowerCase().includes(searchFilter) ||
+          item.company.toLowerCase().includes(searchFilter) ||
+          item.category.toLowerCase().includes(searchFilter)
+        );
+      });
+      setFilterProductsObject(filteredProducts);
+    }
+  }, [searchInput, productsArray, setFilterProductsObject]);
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
     console.log(searchInput);
