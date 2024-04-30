@@ -25,7 +25,7 @@ const Checkout = () => {
   };
   return (
     <CheckoutContext.Provider value={{ checkoutData, updateCheckoutData }}>
-      <h2 className="text-6xl text-center bg-primary my-20 text-white p-8">
+      <h2 className="text-6xl text-center my-10 bg-primary text-white p-8">
         Checkout
       </h2>
       <TabsComponent />

@@ -10,6 +10,11 @@
   color: #00ff00;
 }
 
+.footer-nav .active {
+  background-color: #ebf6ff !important;
+  color: black !important;
+}
+
 @media (max-width: 1024px) {
   .checkbox-size {
     width: 33px;

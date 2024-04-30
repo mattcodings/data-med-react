@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="navbar align-element">
         <div className="navbar-start">
           <Link to="/">
-            <img src="/src/images/DataMed-logo.png" alt="DataMed Logo" />
+            <img src="images/DataMed-logo.png" alt="DataMed Logo" />
           </Link>
         </div>
 

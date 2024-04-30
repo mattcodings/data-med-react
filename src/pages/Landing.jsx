@@ -3,7 +3,7 @@ import { TechnicalFeatures, EHRFeatures, LatestNews } from "../components";
 const Landing = () => {
   return (
     <main>
-      <h1 className="text-6xl text-center my-20 bg-primary text-white p-8">
+      <h1 className="text-6xl text-center my-10 bg-primary text-white p-8">
         DataMed Electronic Health Record Specialists
       </h1>
       <p className="text-2xl lg:w-2/3 w-5/6 mx-auto my-20">

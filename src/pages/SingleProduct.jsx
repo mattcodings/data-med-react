@@ -11,7 +11,7 @@ const SingleProduct = () => {
   const navigate = useNavigate();
   const { name, price, company, description, image } = singleItem;
   return (
-    <div>
+    <div className="min-h-screen">
       <button
         className="btn bg-primary text-accent mt-8 mx-8"
         onClick={() => navigate("/products")}

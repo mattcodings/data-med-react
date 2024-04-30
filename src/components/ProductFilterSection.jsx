@@ -54,7 +54,7 @@ const ProductFilterSection = () => {
     filteredProducts();
   }, [filters.category, filters.company]);
   return (
-    <div className="bg-[#ddd] p-8 mx-auto lg:mx-0 mt-8">
+    <div className="bg-[#ddd] p-8 mx-auto lg:mx-0">
       <h3 className="text-3xl border-b-2 border-primary">Category</h3>
       <ul>
         {categoryArray.map((category) => {

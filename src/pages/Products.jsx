@@ -20,6 +20,9 @@ const Products = () => {
         setFilterProductsObject,
       }}
     >
+      <h1 className="text-6xl text-center my-10 bg-primary text-white p-8">
+        Products
+      </h1>
       <div className="flex flex-wrap lg:flex-nowrap">
         <ProductFilterSection />
         <ProductList />
