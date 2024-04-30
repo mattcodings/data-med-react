@@ -8,3 +8,4 @@ export { default as LatestNews } from "./LatestNews";
 export { default as LatestNewsItem } from "./LatestNewsItem";
 export { default as FormInput } from "./FormInput";
 export { default as SubmitButton } from "./SubmitButton";
+export { default as Footer } from "./Footer";
