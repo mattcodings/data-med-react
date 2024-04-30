@@ -44,7 +44,7 @@ function TabsComponent() {
             <NavLink
               to="tab2"
               activeClassName="active"
-              className="inline-block w-[100%] bg-accent text-black"
+              className="w-[100%] bg-accent text-black flex justify-center items-center"
             >
               <span className="2xl">Payment Information</span>{" "}
               {paymentInfoInputsTrue() ? (
@@ -58,7 +58,7 @@ function TabsComponent() {
             <NavLink
               to="tab3"
               activeClassName="active"
-              className="inline-block w-[100%] bg-accent text-black"
+              className="w-[100%] bg-accent text-black flex justify-center items-center"
             >
               Review and Checkout
             </NavLink>

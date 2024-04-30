@@ -3,9 +3,22 @@
 @tailwind utilities;
 
 .active {
-  background-color: #0a3684;
+  background-color: #0a3684 !important;
   color: white;
 }
 .icon-checkmark {
   color: #00ff00;
+}
+
+@media (max-width: 1024px) {
+  .checkbox-size {
+    width: 33px;
+    height: 33px;
+  }
+}
+@media (max-width: 720px) {
+  .checkbox-size {
+    width: 44px;
+    height: 44px;
+  }
 }

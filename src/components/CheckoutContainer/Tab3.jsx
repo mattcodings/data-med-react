@@ -2,10 +2,17 @@ import { useNavigate } from "react-router-dom";
 import ShoppingCart from "../ShoppingCart";
 import { useCheckout } from "../../pages/Checkout";
 import { useGlobalContext } from "../../context";
+import { useState } from "react";
 
 const Tab3 = () => {
   const { checkoutData } = useCheckout();
-  const { shoppingCart } = useGlobalContext();
+
+  const { shoppingCart, updateShoppingCart } = useGlobalContext();
+  const handleSubmit = () => {
+    updateShoppingCart([]);
+
+    alert("Order Received! Thank You!");
+  };
   let total = 0;
   shoppingCart.forEach((product) => {
     total += product.price;
@@ -25,21 +32,34 @@ const Tab3 = () => {
   } = checkoutData;
   const navigate = useNavigate();
   return (
-    <div className="mx-auto border-2 rounded-b-2xl border-primary p-20 pb-8">
-      <ShoppingCart />
+    <form
+      onSubmit={handleSubmit}
+      className="mx-auto border-2 rounded-b-2xl border-primary p-10 pb-8"
+    >
+      {shoppingCart.length > 0 && <ShoppingCart />}
       <div>
         <h3 className="text-3xl">
-          {firstName} {lastName}
+          Name: {firstName} {lastName}
         </h3>
-        <h5>{email}</h5>
-        <span>{billingAddress} </span> <span>{city} </span>
+        <h5>Email: {email}</h5>
+        <span>Billing Address: {billingAddress} </span> <span>{city} </span>
         <span>{state} </span>
         <span>{zipCode}</span>
-        <h5>{nameOnCard}</h5>
-        <span>{ccNumber} </span>
-        <span>{expDate} </span>
-        <span>{cvv}</span>
-        <span>{total.toFixed(2)}</span>
+        <h5>Name on Card: {nameOnCard}</h5>
+        <span>Credit Card: {ccNumber} </span>
+        <span>Exp Date: {expDate} </span>
+        <span>CVV: {cvv}</span>
+        {shoppingCart.length > 0 && (
+          <p className="text-5xl text-center mb-8">
+            Total: ${total.toFixed(2)}
+          </p>
+        )}
+        <button
+          type="submit"
+          className="text-3xl p-8 items-center rounded-lg bg-primary block mx-auto text-accent"
+        >
+          Complete Checkout
+        </button>
       </div>
       <div className="mt-8">
         <button
@@ -49,7 +69,7 @@ const Tab3 = () => {
           Go Back
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 export default Tab3;

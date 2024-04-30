@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import CheckoutTabs from "../components/CheckoutTabs";
+// import CheckoutTabs from "../components/CheckoutTabs";
 import TabsComponent from "../components/CheckoutContainer/TabsComponent";
 const CheckoutContext = createContext();
 export const useCheckout = () => useContext(CheckoutContext);

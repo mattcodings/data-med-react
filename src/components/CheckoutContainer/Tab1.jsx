@@ -3,10 +3,12 @@ import ShoppingCart from "../ShoppingCart";
 import { useCheckout } from "../../pages/Checkout";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useGlobalContext } from "../../context";
 
 const Tab1 = () => {
   const { checkoutData, updateCheckoutData } = useCheckout();
   const navigate = useNavigate();
+  const { shoppingCart, updateShoppingCart } = useGlobalContext();
 
   const handleChange = (e) => {
     updateCheckoutData(e.target.name, e.target.value);
@@ -16,9 +18,9 @@ const Tab1 = () => {
   };
 
   return (
-    <div className="mx-auto border-2 rounded-b-2xl border-primary p-20 pb-8">
+    <div className="mx-auto border-2 rounded-b-2xl border-primary p-10 pb-8">
       <ShoppingCart />
-      <p>*Fields are required</p>
+      <p className="font-bold">*Fields are required</p>
       <form onSubmit={handleForm}>
         <div className="flex gap-x-10 flex-wrap">
           <CheckoutInformationInput
@@ -76,13 +78,7 @@ const Tab1 = () => {
             type="number"
           />
         </div>
-        <CheckoutInformationInput
-          name="tax"
-          value={checkoutData.tax}
-          onChange={handleChange}
-          placeholder="Tax"
-          type="number"
-        />
+
         <div className="text-center mt-8">
           <button className="btn bg-primary text-accent">
             Continue to Payment Info

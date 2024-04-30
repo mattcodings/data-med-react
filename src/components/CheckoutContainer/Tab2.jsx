@@ -16,7 +16,7 @@ const Tab2 = () => {
     navigate("/checkout/tab3");
   };
   return (
-    <div className="mx-auto border-2 rounded-b-2xl border-primary p-20 pb-8">
+    <div className="mx-auto border-2 rounded-b-2xl border-primary p-10 pb-8">
       <ShoppingCart />
       <p>*Fields are required</p>
       <form onSubmit={handleForm}>
@@ -27,7 +27,7 @@ const Tab2 = () => {
           placeholder="Name On Card"
           type="text"
         />
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-wrap">
           <CheckoutInformationInput
             name="ccNumber"
             value={checkoutData.ccNumber}

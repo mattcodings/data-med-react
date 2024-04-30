@@ -20,7 +20,7 @@ const Products = () => {
         setFilterProductsObject,
       }}
     >
-      <div className="flex">
+      <div className="flex flex-wrap lg:flex-nowrap">
         <ProductFilterSection />
         <ProductList />
       </div>

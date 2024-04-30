@@ -3,15 +3,12 @@ import {
   Error,
   HomeLayout,
   Landing,
-  Login,
   Products,
   PrivateRoute,
   Checkout,
-  Register,
   SingleProduct,
   Profile,
 } from "./pages";
-import Test from "./pages/Test";
 import Tab1 from "./components/CheckoutContainer/Tab1";
 import Tab2 from "./components/CheckoutContainer/Tab2";
 import Tab3 from "./components/CheckoutContainer/Tab3";
@@ -56,18 +53,6 @@ const router = createBrowserRouter([
             <Profile />
           </PrivateRoute>
         ),
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
-      },
-      {
-        path: "/test",
-        element: <Test />,
       },
     ],
   },

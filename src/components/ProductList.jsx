@@ -30,14 +30,14 @@ const ProductList = () => {
   return (
     <div>
       <div className="flex justify-center items-center gap-x-2 my-20">
-        <label htmlFor="search ">Search</label>
+        <label htmlFor="search">Search</label>
         <input
           type="text"
           value={searchInput}
           onChange={handleSearchChange}
-          placeholder="search"
+          placeholder="Search"
           id="search"
-          className="border-primary border-2 p-2"
+          className="border-primary border-2 p-2 w-3/4 md:w-1/2 lg:w-1/4"
         />
       </div>
       <div className="mx-20">
