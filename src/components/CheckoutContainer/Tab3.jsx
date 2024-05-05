@@ -12,6 +12,7 @@ const Tab3 = () => {
     updateShoppingCart([]);
 
     alert("Order Received! Thank You!");
+    navigate("/");
   };
   let total = 0;
   shoppingCart.forEach((product) => {
