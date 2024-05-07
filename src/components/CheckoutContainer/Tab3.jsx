@@ -7,9 +7,9 @@ import { useState } from "react";
 const Tab3 = () => {
   const { checkoutData } = useCheckout();
 
-  const { shoppingCart, updateShoppingCart } = useGlobalContext();
+  const { shoppingCart, clearShoppingCart } = useGlobalContext();
   const handleSubmit = () => {
-    updateShoppingCart([]);
+    clearShoppingCart();
 
     alert("Order Received! Thank You!");
     navigate("/");

@@ -10,12 +10,20 @@ const AppContext = ({ children }) => {
   const updateShoppingCart = (item) => {
     setShoppingCart([...shoppingCart, { ...item, uid: nanoid() }]);
   };
+  const clearShoppingCart = () => {
+    setShoppingCart([]);
+  };
   const deleteItemFromCart = (id) => {
     setShoppingCart(shoppingCart.filter((item) => item.id !== id));
   };
   return (
     <GlobalContext.Provider
-      value={{ shoppingCart, updateShoppingCart, deleteItemFromCart }}
+      value={{
+        shoppingCart,
+        updateShoppingCart,
+        deleteItemFromCart,
+        clearShoppingCart,
+      }}
     >
       {children}
     </GlobalContext.Provider>
