@@ -23,7 +23,7 @@ function TabsComponent() {
     return nameOnCard !== "" && ccNumber !== "" && expDate !== "" && cvv;
   };
   return (
-    <div className="w-[70%] mx-auto mt-20">
+    <div className="w-[70%] mx-auto my-20">
       <nav>
         <ul className="flex justify-between">
           <li className="w-1/3 text-center border-2 rounded-t-lg border-primary">
