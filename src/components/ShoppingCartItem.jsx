@@ -18,7 +18,7 @@ const ShoppingCartItem = ({ item, deleteItem }) => {
       </div>
       <div className="text-center">
         <button
-          onClick={() => deleteItem(item.id)}
+          onClick={() => deleteItem(item.uid)}
           className="btn bg-primary text-accent w-56 text-2xl mb-8"
         >
           Delete

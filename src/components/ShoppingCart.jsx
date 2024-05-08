@@ -9,9 +9,9 @@ const ShoppingCart = () => {
       {shoppingCart.map((item) => {
         return (
           <ShoppingCartItem
-            key={item.id}
+            key={item.uid}
             item={item}
-            deleteItem={() => deleteItemFromCart(item.id)}
+            deleteItem={() => deleteItemFromCart(item.uid)}
           />
         );
       })}

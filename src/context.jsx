@@ -13,8 +13,8 @@ const AppContext = ({ children }) => {
   const clearShoppingCart = () => {
     setShoppingCart([]);
   };
-  const deleteItemFromCart = (id) => {
-    setShoppingCart(shoppingCart.filter((item) => item.id !== id));
+  const deleteItemFromCart = (uid) => {
+    setShoppingCart(shoppingCart.filter((item) => item.uid !== uid));
   };
   return (
     <GlobalContext.Provider
