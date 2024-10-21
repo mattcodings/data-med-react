@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const LatestNewsItem = ({ title, content, image, url, publishDate }) => {
   const articleDate = new Date(Date.parse(publishDate));
   return (
@@ -16,4 +18,14 @@ const LatestNewsItem = ({ title, content, image, url, publishDate }) => {
     </div>
   );
 };
+
+// validate each prop
+LatestNewsItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  publishDate: PropTypes.string.isRequired,
+};
+
 export default LatestNewsItem;

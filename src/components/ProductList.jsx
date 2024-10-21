@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useProductContext } from "../pages/Products";
 import ProductSingleItem from "./ProductSingleItem";
-import FilterInput from "./FilterInput";
 
 const ProductList = () => {
   const { productsArray, setFilterProductsObject, filterProductsObject } =
@@ -24,7 +23,6 @@ const ProductList = () => {
   }, [searchInput, productsArray, setFilterProductsObject]);
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
-    console.log(searchInput);
   };
 
   return (

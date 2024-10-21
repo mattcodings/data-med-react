@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import PropTypes from "prop-types";
 const CheckboxFilter = ({
   name,
   type,
@@ -26,5 +26,12 @@ const CheckboxFilter = ({
       />
     </label>
   );
+};
+
+CheckboxFilter.propTypes = {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  currentlyChecked: PropTypes.bool.isRequired,
+  handleCheckboxChange: PropTypes.func.isRequired,
 };
 export default CheckboxFilter;

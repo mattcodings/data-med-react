@@ -4,6 +4,7 @@ import { Footer } from "../components";
 const HomeLayout = () => {
   return (
     <>
+      {/* The outlet is the layout of each page */}
       <nav>
         <Navbar />
       </nav>

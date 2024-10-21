@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const FormInput = ({ name, label, type, defaultValue }) => {
   return (
     <div>
@@ -15,5 +16,11 @@ const FormInput = ({ name, label, type, defaultValue }) => {
       </label>
     </div>
   );
+};
+FormInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string.isRequired,
 };
 export default FormInput;

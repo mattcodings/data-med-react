@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import PropTypes from "prop-types";
 
+// single product item in products page
 const ProductSingleItem = ({
   id,
   name,
@@ -8,10 +10,10 @@ const ProductSingleItem = ({
   image,
   company,
   category,
-  featured,
   description,
   uid,
 }) => {
+  // update the global shopping cart found in the navbar
   const { updateShoppingCart } = useGlobalContext();
   return (
     <div className="bg-[#eee] my-20 p-8">
@@ -52,4 +54,16 @@ const ProductSingleItem = ({
     </div>
   );
 };
+
+ProductSingleItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  uid: PropTypes.number.isRequired,
+};
+
 export default ProductSingleItem;

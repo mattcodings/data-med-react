@@ -2,6 +2,7 @@ import { useGlobalContext } from "../context";
 import ShoppingCartItem from "./ShoppingCartItem";
 
 const ShoppingCart = () => {
+  // import global context so cart items can be viewed in checkout
   const { shoppingCart, deleteItemFromCart } = useGlobalContext();
 
   return (

@@ -32,7 +32,6 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <ul className="menu menu-horizontal hidden lg:flex">
-            {/* {user ? <Link to="/profile">Profile</Link> : ""} */}
             <div className="dropdown">
               <FaShoppingCart
                 tabIndex={0}
@@ -52,10 +51,12 @@ const Navbar = () => {
                 tabIndex={0}
                 className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40"
               >
+                {/* display cart in nav bar */}
                 {shoppingCart.map((product) => {
                   return (
                     <li key={product.uid}>
                       <h3>{product.name}</h3>
+                      <h6 className="mt-[-15px] border-b-2">{product.price}</h6>
                     </li>
                   );
                 })}
@@ -75,6 +76,7 @@ const Navbar = () => {
               <button
                 type="button"
                 className="text-center"
+                // auth0 function to return home on logout
                 onClick={() => logout({ returnTo: window.location.origin })}
               >
                 <FaUser className="text-3xl text-primary mx-5" />

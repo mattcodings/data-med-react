@@ -10,14 +10,17 @@ const ProductFilterSection = () => {
   const companyArray = [
     ...new Set(productsArray.map((product) => product.company)),
   ];
-
+  // create an object to hold the filters
   const [filters, setFilters] = useState({
     category: [],
     company: [],
   });
+  // type is either category or company
   const handleCheckboxChange = (type, value) => {
     setFilters((prevFilters) => ({
+      // filters applied before state change
       ...prevFilters,
+      // if prev filter includes the value selected, filters to not include the value because checkbox is then unchecked. else, add value to array
       [type]: prevFilters[type].includes(value)
         ? prevFilters[type].filter((product) => product !== value)
         : [...prevFilters[type], value],
@@ -26,7 +29,9 @@ const ProductFilterSection = () => {
 
   useEffect(() => {
     const filteredProducts = () => {
+      // array used to show filtered items
       let filteredArray;
+      // filter based on checkboxes
       if (filters.category.length > 0 && filters.company.length > 0) {
         filteredArray = productsArray.filter((product) => {
           return (
@@ -52,7 +57,12 @@ const ProductFilterSection = () => {
       setFilterProductsObject(filteredArray);
     };
     filteredProducts();
-  }, [filters.category, filters.company]);
+  }, [
+    productsArray,
+    setFilterProductsObject,
+    filters.category,
+    filters.company,
+  ]);
   return (
     <div className="bg-[#ddd] p-8 mx-auto lg:mx-0">
       <h3 className="text-3xl border-b-2 border-primary">Category</h3>
@@ -64,6 +74,7 @@ const ProductFilterSection = () => {
                 <input
                   className="checkbox-size m-2"
                   type="checkbox"
+                  // if value (category) is in filters category array, mark as checked
                   checked={filters.category.includes(category)}
                   onChange={() => handleCheckboxChange("category", category)}
                 />

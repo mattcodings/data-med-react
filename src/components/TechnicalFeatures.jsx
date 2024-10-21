@@ -1,5 +1,6 @@
 import TechnicalFeature from "./TechnicalFeature";
 
+// parent of technicalfeature components, holds info to display
 const technicalFeatures = [
   {
     image: "/images/TechFeatures1.jpg",

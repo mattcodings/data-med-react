@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 const ShoppingCartItem = ({ item, deleteItem }) => {
+  // displays the individual item in the cart in checkout page
   return (
     <li className="border-b-2 my-8">
       <div className="flex flex-wrap gap-x-10 mb-8 items-center">
@@ -26,5 +28,10 @@ const ShoppingCartItem = ({ item, deleteItem }) => {
       </div>
     </li>
   );
+};
+
+ShoppingCartItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  deleteItem: PropTypes.func.isRequired,
 };
 export default ShoppingCartItem;

@@ -18,6 +18,7 @@ const NavLinks = () => {
           </li>
         );
       })}
+      {/* send user to checkout page or redirect to login to checkout */}
       {user ? (
         <li>
           <NavLink to="/checkout">Checkout</NavLink>
@@ -31,7 +32,6 @@ const NavLinks = () => {
           >
             Checkout
           </button>
-          {/* <NavLink to="/login">Checkout</NavLink> */}
         </li>
       )}
     </>

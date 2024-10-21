@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import LatestNewsItem from "./LatestNewsItem";
 
 const LatestNews = () => {
-  console.log(import.meta.env);
   const [newsArray, setNewsArray] = useState([]);
+  // useEffect to retrieve only once per page visit. API allows max 100 a day.
   useEffect(() => {
     const getNews = async () => {
       try {
@@ -12,9 +12,9 @@ const LatestNews = () => {
             import.meta.env.VITE_LATEST_NEWS_API_KEY
           }`
         );
-        console.log(response);
+
         const results = await response.json();
-        console.log(results.articles);
+
         setNewsArray(results.articles);
       } catch (error) {
         console.log(error);

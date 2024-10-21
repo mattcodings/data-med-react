@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const EHRFeature = ({ title, description }) => {
   return (
     <div className="border w-96 xl:w-1/3 p-8 text-center mx-auto">
@@ -5,5 +6,10 @@ const EHRFeature = ({ title, description }) => {
       <p className="text-2xl text-left">{description}</p>
     </div>
   );
+};
+
+EHRFeature.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 export default EHRFeature;
